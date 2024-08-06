@@ -9,3 +9,7 @@ export type ProcessNamespace = Partial<{
     exit: ExitFunc
     argv: string[]
 }> | undefined;
+
+export type BunNamespace = Partial<{
+    argv: string[]
+}> | undefined;
