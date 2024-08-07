@@ -3,7 +3,7 @@ import type { DenoNamespace, ProcessNamespace } from './namespaces.d.ts';
 declare const Deno: DenoNamespace;
 declare const process: ProcessNamespace;
 
-export default exit(code: number = 1): never {
+export default function exit(code: number = 1): never {
     if (typeof Deno !== 'undefined' && Deno.exit) {
         // deno
         return Deno.exit(code);
