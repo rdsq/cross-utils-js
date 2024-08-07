@@ -7,7 +7,7 @@ declare const process: ProcessNamespace;
  * Exit the program with a status code, works with Node, Deno and Bun
  * @param code The exit code. 0 by default. 0 - success, 1 or more - failure
  */
-export default function exit(code: number = 1): never {
+export default function exit(code: number = 0): never {
     if (typeof Deno !== 'undefined' && Deno.exit) {
         // deno
         return Deno.exit(code);
