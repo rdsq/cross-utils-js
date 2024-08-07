@@ -1,0 +1,8 @@
+{
+    "name": "@rdsq/cross-utils",
+    "exports": {
+        ".": "./mod.ts",
+        "exit": "./exit.ts"
+    },
+    "version": "1.0.0"
+}
