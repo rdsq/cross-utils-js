@@ -1,10 +1,10 @@
 {
     "name": "@rdsq/cross-utils",
     "exports": {
-        ".": "./mod.ts",
-        "./exit": "./exit.ts",
-        "./argv": "./argv.ts",
-        "./os": "./os.ts"
+        ".": "./src/mod.ts",
+        "./exit": "./src/exit.ts",
+        "./argv": "./src/argv.ts",
+        "./os": "./src/os.ts"
     },
     "version": "1.1.0"
 }
