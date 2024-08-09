@@ -1,6 +1,6 @@
 This is a package that contains some utils designed to work across all JavaScript runtimes
 
-If the runtime the script runs on is not supported, it will throw `Error('Unsupported runtime')`
+If the runtime the script runs on is not supported, it will throw `Error('Unknown runtime')`
 
 ## Exit
 

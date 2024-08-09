@@ -1,5 +1,3 @@
-import { BunNamespace } from "../namespaces.d.ts";
-
 declare const Bun: any;
 
 export async function runCommandInBun(command: string, args: string[]): Promise<void> {
