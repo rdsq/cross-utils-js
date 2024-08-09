@@ -9,15 +9,25 @@ declare const process: ProcessNamespace;
 declare const window: WindowNamespace;
 declare const Bun: BunNamespace;
 
+/** How to open the link in the browser, `NewTab` by default */
 export enum BrowserOpen {
+    /** Open the link in a new browser tab */
     NewTab = 'newTab',
+    /** Open the link in the same browser tab */
     SameTab = 'sameTab',
 }
 
+/** Options for the `open` function */
 export type OpenOptions = {
+    /** How to open the link in the browser, `NewTab` by default */
     browser?: BrowserOpen;
 };
 
+/**
+ * Open a resource in the browser, works with Node, Deno, Bun and browser
+ * @param resource The link to the resource to open
+ * @param options Options for the function
+ */
 export default async function open(resource: string, options: OpenOptions = {}): Promise<void> {
     let command: string;
     const args: string[] = [];
