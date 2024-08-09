@@ -4,7 +4,8 @@
         ".": "./src/mod.ts",
         "./exit": "./src/exit.ts",
         "./argv": "./src/argv.ts",
-        "./os": "./src/os.ts"
+        "./os": "./src/os.ts",
+        "./open": "./src/open.ts"
     },
-    "version": "1.1.0"
+    "version": "1.2.0"
 }

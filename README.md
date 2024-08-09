@@ -57,3 +57,13 @@ import { getOsName } from '@rdsq/cross-utils/os';
 console.log(await getOsName());
 // 'windows', 'darwin', for example
 ```
+
+## Open
+
+`open` function opens any URL. Works with Node, Deno, Bun and Browser
+
+```ts
+import open from '@rdsq/cross-utils/open';
+
+await open('https://example.com/');
+```

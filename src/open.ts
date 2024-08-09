@@ -31,6 +31,7 @@ export default async function open(resource: string, options: OpenOptions = {}):
     if (os === 'windows') {
         command = 'cmd';
         args.push('/s', '/c', 'start', '', '/b');
+        resource = resource.replaceAll('&', '^&');
     } else if (os === 'darwin') {
         command = 'open';
     } else {
