@@ -7,6 +7,12 @@ export type DenoNamespace = Partial<{
     version: {
         deno?: unknown
     }
+    build: {
+        os?: {
+            arch: string
+            os: string
+        }
+    }
 }> | undefined;
 
 /** Namespace that Node and Bun provide */

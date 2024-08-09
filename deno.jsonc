@@ -3,7 +3,8 @@
     "exports": {
         ".": "./mod.ts",
         "./exit": "./exit.ts",
-        "./argv": "./argv.ts"
+        "./argv": "./argv.ts",
+        "./os": "./os.ts"
     },
     "version": "1.1.0"
 }

@@ -42,3 +42,18 @@ console.log(getArgv({ onlyArgs: false }));
 // something like ['/path/to/runtime', '/path/to/cli', 'foo', 'bar']
 // in Deno ['', '', 'foo', 'bar']
 ```
+
+## Get OS Name
+
+`getOsName` is a function to get the name of the OS the script is running on, works with Node, Deno and Bun
+
+Example:
+
+```ts
+import { getOsName } from '@rdsq/cross-utils/os';
+// NOT default export
+
+// it is async
+console.log(await getOsName());
+// 'windows', 'darwin', for example
+```
