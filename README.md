@@ -1,5 +1,7 @@
 This is a package that contains some utils designed to work across all JavaScript runtimes
 
+If the runtime the script runs on is not supported, it will throw `Error('Unsupported runtime')`
+
 ## Exit
 
 `exit` is a function to end the program execution with a status code, works with Node, Deno and Bun
@@ -45,7 +47,7 @@ console.log(getArgv({ onlyArgs: false }));
 
 ## Get OS Name
 
-`getOsName` is a function to get the name of the OS the script is running on, works with Node, Deno and Bun
+`getOsName` is a function to get the name of the OS the script is running on, works with Node, Deno, Bun and browser if `browserAsOs` is set on `true` (`true` by default)
 
 Example:
 
@@ -55,7 +57,7 @@ import { getOsName } from '@rdsq/cross-utils/os';
 
 // it is async
 console.log(await getOsName());
-// 'windows', 'darwin', for example
+// 'windows', 'darwin', 'browser', for example
 ```
 
 ## Open
