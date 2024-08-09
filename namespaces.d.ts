@@ -29,3 +29,9 @@ export type ProcessNamespace = Partial<{
 export type BunNamespace = Partial<{
     argv: string[]
 }> | undefined;
+
+/** Namespace for browser window */
+export type WindowNamespace = Partial<{
+    document: unknown
+    open: (url: string, target?: '_blank' | '_self') => WindowNamespace
+}> | undefined;
