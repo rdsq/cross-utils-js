@@ -13,6 +13,7 @@ export type DenoNamespace = Partial<{
             os: string
         }
     }
+    Command: unknown
 }> | undefined;
 
 /** Namespace that Node and Bun provide */
@@ -28,6 +29,7 @@ export type ProcessNamespace = Partial<{
 /** Namespace that Bun provides */
 export type BunNamespace = Partial<{
     argv: string[]
+    spawn: unknown
 }> | undefined;
 
 /** Namespace for browser window */

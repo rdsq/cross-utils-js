@@ -1,9 +1,13 @@
-import type { DenoNamespace, ProcessNamespace, WindowNamespace } from "./namespaces.d.ts";
+import type { DenoNamespace, ProcessNamespace, WindowNamespace, BunNamespace } from "./namespaces.d.ts";
 import { getOsName } from "./os.ts";
+import { runCommandInBun } from "./terminal/bun.ts";
+import { runCommandInDeno } from "./terminal/deno.ts";
+import { runCommandInNode } from "./terminal/node.ts";
 
 declare const Deno: DenoNamespace;
 declare const process: ProcessNamespace;
 declare const window: WindowNamespace;
+declare const Bun: BunNamespace;
 
 export enum BrowserOpen {
     NewTab = 'newTab',
@@ -34,4 +38,18 @@ export default async function open(resource: string, options: OpenOptions = {}):
         command = 'xdg-open';
     }
     args.push(resource);
+    let runCommand;
+    if (typeof Deno !== 'undefined' && Deno.Command) {
+        // deno
+        runCommand = runCommandInDeno;
+    } else if (typeof process !== 'undefined' && process.versions) {
+        // node
+        runCommand = runCommandInNode;
+    } else if (typeof Bun !== 'undefined' && Bun.spawn) {
+        // bun
+        runCommand = runCommandInBun;
+    } else {
+        throw new Error('Unknown runtime');
+    }
+    await runCommand(command, args);
 }
