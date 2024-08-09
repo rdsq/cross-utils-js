@@ -8,10 +8,8 @@ export type DenoNamespace = Partial<{
         deno?: unknown
     }
     build: {
-        os?: {
-            arch: string
-            os: string
-        }
+        arch?: string
+        os?: string
     }
     Command: unknown
 }> | undefined;

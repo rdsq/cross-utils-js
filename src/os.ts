@@ -8,9 +8,9 @@ declare const process: ProcessNamespace;
  * @returns OS name
  */
 export async function getOsName(): Promise<string> {
-    if (typeof Deno !== 'undefined' && Deno.build?.os?.os) {
+    if (typeof Deno !== 'undefined' && Deno.build?.os) {
         // deno
-        return Deno.build.os.os;
+        return Deno.build.os;
     } else if (typeof process !== 'undefined' && process.versions) {
         // node and bun (through node compatibility)
         const os = await import('node:os');
