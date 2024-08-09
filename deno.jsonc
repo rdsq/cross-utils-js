@@ -7,5 +7,9 @@
         "./os": "./src/os.ts",
         "./open": "./src/open.ts"
     },
-    "version": "1.2.0"
+    "version": "1.2.0",
+    "exclude": [
+        ".github",
+        ".vscode"
+    ]
 }
