@@ -4,12 +4,19 @@ type ExitFunc = (code: number) => never;
 export type DenoNamespace = Partial<{
     exit: ExitFunc
     args: string[]
+    version: {
+        deno?: unknown
+    }
 }> | undefined;
 
 /** Namespace that Node and Bun provide */
 export type ProcessNamespace = Partial<{
     exit: ExitFunc
     argv: string[]
+    versions: {
+        node?: unknown,
+        bun?: unknown
+    }
 }> | undefined;
 
 /** Namespace that Bun provides */
