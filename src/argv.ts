@@ -9,10 +9,11 @@ declare const process: ProcessNamespace;
  * @param options Options for the function
  * @returns The native argv, or throws an error if the runtime is unknown
  */
-export default function getArgv({ onlyArgs = true }: {
+export default function getArgv(options: {
     /** Cut the runtime and cli paths on Bun and Node if `true`, otherwise add 2 empty strings on Deno. `true` by default */
     onlyArgs?: boolean,
-} = {}): string[] | never {
+} = { onlyArgs: true }): string[] | never {
+    const { onlyArgs } = options;
     if (typeof Deno !== 'undefined' && Deno.args) {
         // if deno
         return onlyArgs ? Deno.args : [ '', '', ...Deno.args ];
