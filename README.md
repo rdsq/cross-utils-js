@@ -1,5 +1,6 @@
 > [!WARNING]
 > This package is deprecated
+>
 > Use alternatives for these methods, such as [`@rdsq/open`](https://jsr.io/@rdsq/open) for `open`, or `node:` modules for other functions
 
 This is a package that contains some utils designed to work across all JavaScript runtimes
